@@ -28,23 +28,7 @@ describe "sort an array", ->
 # http://www.codewars.com/dojo/katas/513e08acc600c94f01000001
 describe "RGB To Hex Conversion", ->
   solution = (r,g,b) ->
-    lookup = {
-      '0': 0,
-      '1': 1,
-      '2': 2,
-      '3': 3,
-      '4': 4,
-      '5': 5,
-      '6': 6,
-      '7': 7,
-      '8': 8,
-      '9': 9,
-      '10': 'A',
-      '11': 'B',
-      '12': 'C',
-      '13': 'D',
-      '14': 'E',
-      '15': 'F' }
+    lookup = "0123456789ABCDEF"
     [r,g,b]
       .map((n) -> if n <   0 then   0 else n)
       .map((n) -> if n > 255 then 255 else n)
