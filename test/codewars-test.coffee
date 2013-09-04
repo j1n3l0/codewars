@@ -32,7 +32,7 @@ describe "RGB To Hex Conversion", ->
     [r,g,b]
       .map((n) -> if n <   0 then   0 else n)
       .map((n) -> if n > 255 then 255 else n)
-      .map((n) -> "#{lookup[Math.floor(n/16)]}#{lookup[n%16]}")
+      .map((n) -> lookup[Math.floor(n/16)] + lookup[n%16])
       .join("")
 
   it "should convert max decimal to hexadecimal", ->
