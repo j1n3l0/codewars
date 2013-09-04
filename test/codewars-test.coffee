@@ -28,7 +28,7 @@ describe "sort an array", ->
 # http://www.codewars.com/dojo/katas/513e08acc600c94f01000001
 describe "RGB To Hex Conversion", ->
   solution = (r,g,b) ->
-    ([r,g,b].map (k) -> { 255: "FF", 0: "00" }[k]).join("")
+    ([r,g,b].map((k) -> if k > 255 then 255 else k).map (k) -> { 255: "FF", 0: "00" }[k]).join("")
 
   it "should convert max decimal to hexadecimal", ->
     expect(solution 255, 255, 255).to.eql("FFFFFF")
