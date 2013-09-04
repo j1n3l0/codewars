@@ -46,6 +46,7 @@ describe "RGB To Hex Conversion", ->
       '14': 'E',
       '15': 'F' }
     [r,g,b]
+      .map((n) -> if n < 0 then 0 else n)
       .map((k) -> if k > 255 then 255 else k)
       .map((n) -> "#{lookup[Math.floor(n/16)]}#{lookup[n%16]}")
       .join("")
