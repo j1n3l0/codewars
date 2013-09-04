@@ -28,11 +28,11 @@ describe "sort an array", ->
 # http://www.codewars.com/dojo/katas/513e08acc600c94f01000001
 describe "RGB To Hex Conversion", ->
   solution = (r,g,b) ->
-    lookup = "0123456789ABCDEF"
+    hex_value = "0123456789ABCDEF"
     [r,g,b]
       .map((n) -> if n <   0 then   0 else n)
       .map((n) -> if n > 255 then 255 else n)
-      .map((n) -> lookup[Math.floor(n/16)] + lookup[n%16])
+      .map((n) -> hex_value[Math.floor(n/16)] + hex_value[n%16])
       .join("")
 
   it "should convert max decimal to hexadecimal", ->
