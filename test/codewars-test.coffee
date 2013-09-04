@@ -59,5 +59,8 @@ describe "RGB To Hex Conversion", ->
   it "should round down numbers > max = 255", ->
     expect(solution 255, 255, 300).to.eq("FFFFFF")
 
+  it "should round up numbers < min = 0", ->
+    expect(solution 0,0,-20).to.eql("000000")
+
   it "should convert all valid decimal to hexadecimal numbers", ->
     expect(solution 148, 0, 211).to.eql("9400D3")
