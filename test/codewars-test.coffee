@@ -26,6 +26,7 @@ describe "sort an array", ->
 
 #
 # http://www.codewars.com/dojo/katas/513e08acc600c94f01000001
+# Useful information available: http://www.statman.info/conversions/hexadecimal.html
 describe "RGB To Hex Conversion", ->
   solution = (r,g,b) ->
     hex_value = "0123456789ABCDEF"
