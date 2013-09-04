@@ -31,7 +31,7 @@ describe "RGB To Hex Conversion", ->
     lookup = { 255: "FF" }
     ([r,g,b].map (k) -> lookup[k]).join("")
 
-  it "should convert decimal to hexadecimal", ->
+  it "should convert max decimal to hexadecimal", ->
     expect(solution 255, 255, 255).to.eql("FFFFFF")
 
     # rgb(255, 255, 300) # returns FFFFFF
