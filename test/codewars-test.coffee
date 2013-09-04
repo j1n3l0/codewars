@@ -30,8 +30,7 @@ describe "RGB To Hex Conversion", ->
   solution = (r,g,b) ->
     hex_value = "0123456789ABCDEF"
     [r,g,b]
-      .map((n) -> if n <   0 then   0 else n)
-      .map((n) -> if n > 255 then 255 else n)
+      .map((n) -> Math.min 255, Math.max(0, n))
       .map((n) -> hex_value[Math.floor(n/16)] + hex_value[n%16])
       .join("")
 
