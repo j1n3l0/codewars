@@ -49,3 +49,28 @@ describe "RGB To Hex Conversion", ->
 
   it "should convert all valid decimal to hexadecimal numbers", ->
     expect(solution 148, 0, 211).to.eql("9400D3")
+
+#
+# http://www.codewars.com/dojo/katas/51e704f2d8dbace389000279
+describe 'Arrays Similar', ->
+  solution = (a, b) ->
+    if a.length is b.length
+      a = a.sort()
+      b = b.sort()
+      [ 0 .. a.length - 1 ].every((i) -> a[i] is b[i])
+    else
+      false
+
+  describe 'for different sized arrays', ->
+    it 'should always return false', ->
+      expect(solution [], [1]).to.eql(false)
+
+  describe 'for same sized arrays', ->
+    it 'should be true for empty arrays', ->
+      expect(solution [], []).to.eql(true)
+
+    it 'should be false for single elment arrays with different elements', ->
+      expect(solution [1], [2]).to.eql(false)
+
+    it 'should be order independent', ->
+      expect(solution [1,2], [2,1]).to.eql(true)
