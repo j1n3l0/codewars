@@ -86,3 +86,12 @@ describe 'Largest 5 digit number in a series', ->
 
   it 'should be 91 for 283910', ->
     expect(solution '283910').to.equals(91)
+
+#
+# http://www.codewars.com/dojo/katas/515e271a311df0350d00000f
+describe 'Square(n) Sum', ->
+  solution = (coll) ->
+    coll.map((n) -> n * n).reduce((acc, x) -> acc + x)
+
+  it 'should return 9 for [1, 2, 2]', ->
+    expect(solution [1, 2, 2]).to.equal(9)
