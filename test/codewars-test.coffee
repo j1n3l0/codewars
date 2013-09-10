@@ -74,3 +74,15 @@ describe 'Arrays Similar', ->
 
     it 'should be order independent', ->
       expect(solution [1,2], [2,1]).to.eql(true)
+
+#
+# http://www.codewars.com/dojo/katas/51675d17e0c1bed195000001
+describe 'Largest 5 digit number in a series', ->
+  partition = (coll, n) ->
+    (coll.slice(v, v + n) for _, v in coll).filter((x) -> x.length is n)
+
+  solution = (coll) ->
+    partition(coll, 2).map((n) -> parseInt n).sort((a,b) -> a < b)[0]
+
+  it 'should be 91 for 283910', ->
+    expect(solution '283910').to.equals(91)
